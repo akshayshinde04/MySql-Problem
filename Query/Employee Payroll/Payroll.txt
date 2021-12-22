@@ -8,7 +8,7 @@ UC-2
 Create table Employee_payroll (ID int Primary Key Auto_Increment, Name varchar(50), Salary int, Starting_Date DATE);
 **********************
 
-UC-3
+UC-3av
 Insert into Employee_payroll values(1,"Ambani",500000,"2021-12-01");
 Insert into Employee_payroll values(2,"Adani",800000,"2021-12-08");
 ************************
@@ -33,3 +33,25 @@ Select AVG(Salary) from Employee_payroll group by Gender;
 Select Name, MAX(Salary) From Employee_payroll Group by Gender;
 Select Name, MIN(Salary) From Employee_payroll Group by Gender;
 Select COUNT(name) From Employee_payroll Group By Gender;
+************************
+
+UC-8
+Alter Table employee_payroll add column PhoneNumber int;
+Alter Table employee_payroll add column Address varchar(30) Default "PUNE";
+Alter Table employee_payroll add column Department Varchar(20) Not Null;
+select * from Employee_payroll;
+*************************
+
+UC-9
+Alter Table employee_payroll add column Basic_Pay int;
+Alter Table employee_payroll add column Deductions int;
+Alter Table employee_payroll add column Taxable_pay int;
+Alter Table employee_payroll add column Income_Tax int;
+Alter Table employee_payroll add column Net_Pay int;
+select * from Employee_payroll;
+*************************
+
+UC-10
+Insert Into employee_payroll values(3,"Terisa",20000,"2020-10-22","F",787878787,"MUMBAI","HR",20000,2000,1000,200,18000);
+select * from Employee_payroll;
+select * from employee_payroll where Name ="Terisa";
