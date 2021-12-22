@@ -1,0 +1,64 @@
+UC-1
+CREATE DATABASE ADDRESS_BOOK_SERVICE;
+
+*********************
+UC-2
+CREATE TABLE address_book(First_name varchar(50),
+    ->      Last_name varchar(50),
+    ->      Address varchar(50),
+    ->      City varchar(50),
+    ->      State varchar(50),
+    ->      Zip_code int,
+    ->      Phone_number int,
+    ->      EmailId varchar(30));
+
+***********************
+UC-3
+Insert into address_book values ("Spider","Man","USA","NewYork","NewJersey",10001,987654,"spiderman@gmail.com");
+Insert into address_book values ("Tony","Stark","USA","LasVegas","Nevada",10008,955899,"ironman@gmail.com");
+select * from address_book;
+
+***********************
+UC-4
+Update address_book set Zip_code = 10004 where First_Name = "Spider";
+
+***********************
+UC-5
+Delete from address_book where First_Name = "Spider";
+
+// Adding records
+Insert into address_book values ("Captian","America","USA","NewYork","NewJersey",10011,984654,"captionamerica@gmail.com");
+
+************************
+UC-6
+Select * from address_book where Zip_code = "10008";
+Select * from address_book where city = "NewYork";
+
+************************
+UC-7
+SELECT COUNT(First_name) FROM address_book WHERE State = "Nevada";
+SELECT COUNT(First_name) FROM address_book WHERE Address = "USA";
+
+************************
+UC-8
+//Adding Records
+Insert into address_book values ("Gangadhar","Pandit","India","ChandniChowk","NewDelhi",110010,977779,"saktiman@gmail.com");
+
+SELECT * FROM address_book ORDER BY City ASC;
+
+************************
+UC-9
+ALTER TABLE address_book ADD Type varchar(50);
+
+Update address_book SET Type = 'Family' WHERE First_name = 'Captian';
+Update address_book SET Type = 'Friend' WHERE First_name = 'Gangadhar';
+Update address_book SET Type = 'Profession' WHERE First_name = 'Tony';
+
+************************
+UC-10
+SELECT COUNT(Phone_number) FROM address_book WHERE Type = "Friend";
+SELECT COUNT(Phone_number) FROM address_book WHERE Type = "Family";
+
+************************
+UC-11
+Insert into address_book values ("Ganga","Pandit","India","ChandniChowk","NewDelhi",110010,977779,"saktiman@gmail.com","Family");
