@@ -1,0 +1,35 @@
+UC-1
+Create database payroll_services;
+show databases;
+use payroll_services;
+**********************
+
+UC-2
+Create table Employee_payroll (ID int Primary Key Auto_Increment, Name varchar(50), Salary int, Starting_Date DATE);
+**********************
+
+UC-3
+Insert into Employee_payroll values(1,"Ambani",500000,"2021-12-01");
+Insert into Employee_payroll values(2,"Adani",800000,"2021-12-08");
+************************
+
+UC-4
+select * from Employee_payroll;
+************************
+
+UC-5
+select salary from Employee_payroll where Name="Adani";
+select salary from Employee_payroll where Starting_Date between CAST ('2018-12-01' AS DATE) AND DATE(NOW());
+************************
+
+UC-6
+Alter Table Employee_payroll Add Gender varchar(8);
+Update Employee_payroll set Gender = "M" where Name ="Ambani" or Name = "Adani";
+************************
+
+UC-7
+Select SUM(Salary) from Employee_payroll where Gender = "M" group by Gender;
+Select AVG(Salary) from Employee_payroll group by Gender;
+Select Name, MAX(Salary) From Employee_payroll Group by Gender;
+Select Name, MIN(Salary) From Employee_payroll Group by Gender;
+Select COUNT(name) From Employee_payroll Group By Gender;
